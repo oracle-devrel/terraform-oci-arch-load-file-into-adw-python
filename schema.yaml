@@ -41,6 +41,7 @@ variableGroups:
         - show_advanced
   variables:   
   - use_existing_vcn
+  - vcn_id
   - fnsubnet_id
   - VCN-CIDR
   - fnsubnet-CIDR
