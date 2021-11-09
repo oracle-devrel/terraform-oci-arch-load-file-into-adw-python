@@ -10,7 +10,7 @@ variable "region" {}
 
 variable "release" {
   description = "Reference Architecture Release (OCI Architecture Center)"
-  default     = "1.0.3"
+  default     = "1.0.4"
 }
 
 variable "ADW_database_password" {}
@@ -31,12 +31,24 @@ variable "processed-bucket" {
   default = "processed-bucket"
 }
 
+variable "use_existing_vcn" {
+  default = true
+}
+
 variable "VCN-CIDR" {
   default = "10.0.0.0/16"
 }
 
+variable "vcn_id" {
+  default = ""
+}
+
 variable "fnsubnet-CIDR" {
   default = "10.0.1.0/24"
+}
+
+variable "fnsubnet_id" {
+  default = ""
 }
 
 variable "ADW_database_cpu_core_count" {
