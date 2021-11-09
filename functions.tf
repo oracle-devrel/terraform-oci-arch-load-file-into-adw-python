@@ -18,7 +18,7 @@ resource "oci_functions_function" "LoadFileIntoAdwFn" {
     "ORDS_BASE_URL" : "https://${substr(module.oci-adb.adb_database.connection_urls[0].apex_url, 8, 22)}.adb.${var.region}.oraclecloudapps.com/ords/",
     "DB_SCHEMA" : "${var.db-schema}",
     "DB_USER" : "${var.db-user}",
-    "DBPWD_CIPHER" : "${var.dbpwd-cipher}",
+    "DBPWD_CIPHER" : "${var.ADW_database_password}",
     "INPUT_BUCKET" : "${var.input-bucket}-${random_id.tag.hex}",
     "PROCESSED_BUCKET" : "${var.processed-bucket}-${random_id.tag.hex}"
   }

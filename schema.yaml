@@ -22,7 +22,7 @@ variableGroups:
   visible: true  
   variables:
   - compartment_ocid
-  - dbpwd-cipher
+  - ADW_database_password
   - ocir_user_name
   - ocir_user_password
   - show_advanced 
@@ -81,7 +81,7 @@ variables:
     title: "Region"
     description: "Choose region where you want to deploy the resources defined by this stack."
 
-  dbpwd-cipher:
+  ADW_database_password:
     type: password
     required: true
     visibile: true
@@ -120,7 +120,7 @@ variables:
     title: "VCN OCID"
     description: "Choose VCN OCID where all will be deployed."
     visible:
-      not:
+      and:
         - use_existing_vcn
 
   fnsubnet_id:
@@ -129,7 +129,7 @@ variables:
     title: "Fn Subnet OCID"
     description: "Choose Subnet OCID where Fn App will be deployed."
     visible:
-      not:
+      and:
         - use_existing_vcn
 
   VCN-CIDR:
@@ -140,7 +140,7 @@ variables:
     title: "VCN CIDR"
     description: "Choose VCN's CIDR block where Fn App will be deployed."
     visible:
-      and:
+      not:
         - use_existing_vcn
 
   fnsubnet-CIDR:
@@ -151,7 +151,7 @@ variables:
     title: "Fn Subnet CIDR"
     description: "Choose Public Subnet's CIDR where Fn App will be deployed." 
     visible:
-      and:
+      not:
         - use_existing_vcn 
 
 

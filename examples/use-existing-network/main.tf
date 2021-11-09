@@ -56,19 +56,19 @@ resource "oci_core_subnet" "my_public_subnet" {
 }
 
 module "oci-arch-load-file-into-adw-python" {
-  source             = "github.com/oracle-devrel/terraform-oci-arch-load-file-into-adw-python"
-  tenancy_ocid       = var.tenancy_ocid
-  user_ocid          = var.user_ocid
-  fingerprint        = var.fingerprint
-  private_key_path   = var.private_key_path
-  region             = var.region
-  compartment_ocid   = var.compartment_ocid
-  dbpwd-cipher       = var.adw_password
-  ocir_user_name     = var.ocir_user_name
-  ocir_user_password = var.ocir_user_password
-  use_existing_vcn   = true
-  vcn_id             = oci_core_vcn.my_vcn.id              # Injected VCN
-  fnsubnet_id        = oci_core_subnet.my_public_subnet.id # Injected Public Subnet
+  source                = "github.com/oracle-devrel/terraform-oci-arch-load-file-into-adw-python"
+  tenancy_ocid          = var.tenancy_ocid
+  user_ocid             = var.user_ocid
+  fingerprint           = var.fingerprint
+  private_key_path      = var.private_key_path
+  region                = var.region
+  compartment_ocid      = var.compartment_ocid
+  ADW_database_password = var.adw_password
+  ocir_user_name        = var.ocir_user_name
+  ocir_user_password    = var.ocir_user_password
+  use_existing_vcn      = true
+  vcn_id                = oci_core_vcn.my_vcn.id              # Injected VCN
+  fnsubnet_id           = oci_core_subnet.my_public_subnet.id # Injected Public Subnet
 }
 
 output "ADW_query_URL_for_JSON_formatted_with_python" {

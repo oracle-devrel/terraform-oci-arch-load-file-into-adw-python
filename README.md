@@ -82,8 +82,8 @@ region = "<oci_region>"
 # Compartment
 compartment_ocid = "<compartment_ocid>"
 
-# dbpwd-cipher
-dbpwd-cipher = "<ADW_password>"
+# ADW_database_password
+ADW_database_password = "<ADW_password>"
 
 # OCIR
 ocir_user_name         = "<ocir_user_name>"
@@ -114,7 +114,7 @@ module "oci-arch-load-file-into-adw-python" {
   private_key_path              = "<private_key_path>"
   region                        = "<oci_region>"
   compartment_ocid              = "<compartment_ocid>"
-  dbpwd-cipher                  = "<dbpwd-cipher>"
+  ADW_database_password         = "<ADW_database_password>"
   ocir_user_name                = "<ocir_user_name>"
   ocir_user_password            = "<ocir_user_password>"
   use_existing_vcn              = true # You can inject your own VCN and subnet 
