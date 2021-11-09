@@ -13,7 +13,7 @@ variable "release" {
   default     = "1.0.3"
 }
 
-variable "dbpwd-cipher" {}
+variable "ADW_database_password" {}
 
 variable "db-schema" {
   default = "admin"

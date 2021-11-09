@@ -10,10 +10,10 @@ variable "region" {}
 
 variable "release" {
   description = "Reference Architecture Release (OCI Architecture Center)"
-  default     = "1.0.3"
+  default     = "1.0.4"
 }
 
-variable "dbpwd-cipher" {}
+variable "ADW_database_password" {}
 
 variable "db-schema" {
   default = "admin"

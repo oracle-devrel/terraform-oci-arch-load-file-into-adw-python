@@ -3,7 +3,7 @@
 
 module "oci-adb" {
   source                                = "github.com/oracle-devrel/terraform-oci-arch-adb"
-  adb_password                          = var.dbpwd-cipher
+  adb_password                          = var.ADW_database_password
   compartment_ocid                      = var.compartment_ocid
   adb_database_cpu_core_count           = var.ADW_database_cpu_core_count
   adb_database_data_storage_size_in_tbs = var.ADW_database_data_storage_size_in_tbs
@@ -27,7 +27,7 @@ resource "null_resource" "soda_update" {
   }
 
   provisioner "local-exec" {
-    command = "curl -X PUT -u 'ADMIN:${var.dbpwd-cipher}' -H \"Content-Type: application/json\" https://${substr(module.oci-adb.adb_database.connection_urls[0].apex_url, 8, 22)}.adb.${var.region}.oraclecloudapps.com/ords/admin/soda/latest/regionsnumbers"
+    command = "curl -X PUT -u 'ADMIN:${var.ADW_database_password}' -H \"Content-Type: application/json\" https://${substr(module.oci-adb.adb_database.connection_urls[0].apex_url, 8, 22)}.adb.${var.region}.oraclecloudapps.com/ords/admin/soda/latest/regionsnumbers"
   }
 }
 
@@ -35,6 +35,6 @@ resource "null_resource" "soda_query" {
   depends_on = [null_resource.soda_update]
 
   provisioner "local-exec" {
-    command = "curl -X POST -u 'ADMIN:${var.dbpwd-cipher}' -H \"Content-Type: application/json\" https://${substr(module.oci-adb.adb_database.connection_urls[0].apex_url, 8, 22)}.adb.${var.region}.oraclecloudapps.com/ords/admin/soda/latest/regionsnumbers?action=query"
+    command = "curl -X POST -u 'ADMIN:${var.ADW_database_password}' -H \"Content-Type: application/json\" https://${substr(module.oci-adb.adb_database.connection_urls[0].apex_url, 8, 22)}.adb.${var.region}.oraclecloudapps.com/ords/admin/soda/latest/regionsnumbers?action=query"
   }
 }

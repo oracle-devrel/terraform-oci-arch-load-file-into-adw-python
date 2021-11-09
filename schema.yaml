@@ -22,7 +22,7 @@ variableGroups:
   visible: true  
   variables:
   - compartment_ocid
-  - dbpwd-cipher
+  - ADW_database_password
   - ocir_user_name
   - ocir_user_password
   - show_advanced 
@@ -81,7 +81,7 @@ variables:
     title: "Region"
     description: "Choose region where you want to deploy the resources defined by this stack."
 
-  dbpwd-cipher:
+  ADW_database_password:
     type: password
     required: true
     visibile: true
