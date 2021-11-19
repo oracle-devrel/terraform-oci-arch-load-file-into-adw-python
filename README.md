@@ -172,6 +172,10 @@ $ curl -X POST -u 'ADMIN:BEstrO0ng_#11' -H "Content-Type: application/json" --da
 ## Contributing
 This project is open source.  Please submit your contributions by forking this repository and submitting a pull request!  Oracle appreciates any contributions that are made by the open source community.
 
+### Attribution & Credits
+Initially, this project was created and distributed in [GitHub Oracle QuickStart space](https://github.com/oracle-quickstart/oci-arch-load-file-into-adw-python). For that reason, we would like to thank all the involved contributors enlisted below:
+- Lukasz Feldman (https://github.com/lfeldman)
+
 ## License
 Copyright (c) 2021 Oracle and/or its affiliates.
 
