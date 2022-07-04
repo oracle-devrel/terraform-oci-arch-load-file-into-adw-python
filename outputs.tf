@@ -1,4 +1,4 @@
-## Copyright (c) 2021, Oracle and/or its affiliates.
+## Copyright (c) 2022, Oracle and/or its affiliates.
 ## All rights reserved. The Universal Permissive License (UPL), Version 1.0 as shown at http://oss.oracle.com/licenses/upl
 
 output "ADW_query_URL_for_JSON_formatted_with_python" {
@@ -8,3 +8,4 @@ output "ADW_query_URL_for_JSON_formatted_with_python" {
 output "ADWdatabase_connection_urls" {
   value = module.oci-adb.adb_database.connection_urls
 }
+
